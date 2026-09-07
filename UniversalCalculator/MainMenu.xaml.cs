@@ -59,6 +59,11 @@ namespace Calculator
 		{
 				
 		}
+
+		private void TripCalculateButton_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }
 

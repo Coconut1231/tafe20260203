@@ -29,6 +29,7 @@
 					<Button x:Name="MortgageCalculatorButton" Content="Mortgage Calculator" Click="MortgageCalculatorButton_Click" Margin="5" Background="Beige"/>
 					<Button x:Name="CurrencyCalculatorButton" Content="Currency Calculator" Click="CurrencyCalculatorButton_Click" Margin="5" Background="Beige"/>
 					<Button x:Name="ExitButton" Content="Exit" Click="ExitButton_Click" Margin="5" Background="Beige"/>
+					<Button x:Name="TripButton" Content="Trip" Click="TripCalculateButton_Click" Margin="5" Background="Beige"/>
 				</StackPanel>
 
 			</StackPanel>
