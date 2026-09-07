@@ -59,6 +59,11 @@ namespace Calculator
 		{
 			{ Frame.Navigate(typeof(Mortgage)); }
 		}
+
+		private void TripButton_Click(object sender, RoutedEventArgs e)
+		{
+			
+		}
 	}
 }
 
