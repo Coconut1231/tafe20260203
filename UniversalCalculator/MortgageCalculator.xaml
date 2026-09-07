@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Calculator.Mortgage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	<!-- resources -->
+	<Page.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Resources/Resources.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+
+			<!-- local styles just for this page -->
+			<Style x:Key="CardBorderStyle" TargetType="Border">
+				<Setter Property="Background" Value="#FFF7F7F7" />
+				<Setter Property="BorderBrush" Value="#FFD0D0D0" />
+				<Setter Property="BorderThickness" Value="1" />
+				<Setter Property="CornerRadius" Value="8" />
+				<Setter Property="Padding" Value="20" />
+			</Style>
+
+			<Style x:Key="InputLabelStyle" TargetType="TextBlock" BasedOn="{StaticResource SmallTextBlockStyle}">
+				<Setter Property="FontWeight" Value="SemiBold" />
+				<Setter Property="Foreground" Value="#FF444444" />
+				<Setter Property="Margin" Value="0,0,0,4" />
+			</Style>
+
+			<Style x:Key="InputBoxStyle" TargetType="TextBox">
+				<Setter Property="FontSize" Value="16" />
+				<Setter Property="Padding" Value="10,8" />
+				<Setter Property="Margin" Value="0,0,0,16" />
+				<Setter Property="CornerRadius" Value="4" />
+			</Style>
+
+			<Style x:Key="ResultCardStyle" TargetType="Border">
+				<Setter Property="Background" Value="#FFEFF6EC" />
+				<Setter Property="BorderBrush" Value="#FF7FB878" />
+				<Setter Property="BorderThickness" Value="1" />
+				<Setter Property="CornerRadius" Value="8" />
+				<Setter Property="Padding" Value="16" />
+				<Setter Property="Margin" Value="0,8,0,0" />
+			</Style>
+		</ResourceDictionary>
+	</Page.Resources>
+
+	<ScrollViewer>
+		<Grid Padding="24" MaxWidth="480" HorizontalAlignment="Center">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<!-- header -->
+			<StackPanel Grid.Row="0" Margin="0,0,0,20">
+				<TextBlock Text="Mortgage Calculator"
+				           Style="{StaticResource BigTextBlockStyle}"
+				           FontSize="30" />
+				<TextBlock Text="Estimate your monthly repayment, total repayment, and total interest."
+				           Style="{StaticResource SmallTextBlockStyle}"
+				           Foreground="#FF666666"
+				           Margin="0,4,0,0" />
+			</StackPanel>
+
+			<!-- input card -->
+			<Border Grid.Row="1" Style="{StaticResource CardBorderStyle}">
+				<StackPanel>
+					<TextBlock Text="Loan amount ($)" Style="{StaticResource InputLabelStyle}" />
+					<TextBox x:Name="txtPrincipal" PlaceholderText="e.g. 350000"
+					         InputScope="Number"
+					         Style="{StaticResource InputBoxStyle}" />
+
+					<TextBlock Text="Annual interest rate (%)" Style="{StaticResource InputLabelStyle}" />
+					<TextBox x:Name="txtAnnualRate" PlaceholderText="e.g. 4"
+					         InputScope="Number"
+					         Style="{StaticResource InputBoxStyle}" />
+
+					<TextBlock Text="Loan term (years)" Style="{StaticResource InputLabelStyle}" />
+					<TextBox x:Name="txtTermYears" PlaceholderText="e.g. 30"
+					         InputScope="Number"
+					         Style="{StaticResource InputBoxStyle}" Margin="0" />
+				</StackPanel>
+			</Border>
+
+			<!-- result -->
+			<Border x:Name="resultCard" Grid.Row="2" Style="{StaticResource ResultCardStyle}" Visibility="Collapsed">
+				<TextBlock x:Name="txtResult"
+				           Style="{StaticResource FlyoutTextBlockStyle}"
+				           FontSize="16"
+				           TextWrapping="Wrap"
+				           Foreground="#FF2E5B27" />
+			</Border>
+
+			<!-- buttons -->
+			<StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,20,0,0">
+				<Button x:Name="btnCalculate" Content="Calculate"
+				        Style="{StaticResource ButtonBlueStyle}"
+				        Width="200" Margin="0,0,10,0"
+				        Click="btnCalculate_Click" />
+				<Button x:Name="btnBack" Content="Back to Menu"
+				        Style="{StaticResource ButtonBlueStyle}"
+				        Background="#FFE0E0E0"
+				        Width="200"
+				        Click="btnBack_Click" />
+			</StackPanel>
+		</Grid>
+	</ScrollViewer>
+</Page>

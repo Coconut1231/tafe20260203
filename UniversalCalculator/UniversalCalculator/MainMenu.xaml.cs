@@ -46,7 +46,7 @@ namespace Calculator
 		private void CurrencyCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
 			{
-				
+				{ Frame.Navigate(typeof(ForeignExchangeCurrencyCalculator)); }
 			}
 		}
 
@@ -57,7 +57,7 @@ namespace Calculator
 		/// <param name="e"></param>
 		private void MortgageCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
-			{ Frame.Navigate(typeof(Mortgage)); }
+
 		}
 	}
 }
