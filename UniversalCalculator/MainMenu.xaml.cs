@@ -46,7 +46,7 @@ namespace Calculator
 		private void CurrencyCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
 			{
-				
+				{ Frame.Navigate(typeof(ForeignExchangeCurrencyCalculator)); }
 			}
 		}
 
